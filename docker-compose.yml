@@ -1,0 +1,36 @@
+# ============================================================
+# 客户数据信息统计驾驶舱 —— Docker Compose 部署
+# 用法：docker compose up -d       （或旧版 docker-compose up -d）
+#       docker compose logs -f    查看日志
+#       docker compose down       停止（数据保留在命名卷中）
+# ============================================================
+services:
+  dashboard:
+    build: .
+    image: customer-insight-dashboard:1.1.0
+    container_name: customer-insight-dashboard
+    restart: unless-stopped
+    ports:
+      # 格式：宿主机端口:容器端口。改外部端口只需改冒号左边。
+      - "3000:3000"
+    environment:
+      PORT: "3000"
+      STORAGE_DRIVER: local
+      TZ: Asia/Shanghai
+      # 首次管理员密码（可选，至少8位；留空则用 admin/admin123 且公网强制改密）
+      # ADMIN_INITIAL_PASSWORD: "请设置一个至少8位的强密码"
+      # 若站在 HTTPS 反代之后，取消注释：
+      # COOKIE_SECURE: "1"
+    volumes:
+      # local 模式下业务数据的持久化位置：账号/字段、客户明细、日志
+      - cid_data:/app/data
+      - cid_public_data:/app/public/data
+      - cid_logs:/app/logs
+      # 若改用 cloud 模式：把下面这行取消注释，并把 STORAGE_DRIVER 改为 cloud，
+      # 同时把宿主机上填好的 cloud-config.json 放到 ./cloud-config.json。
+      # - ./cloud-config.json:/app/data/cloud-config.json:ro
+
+volumes:
+  cid_data:
+  cid_public_data:
+  cid_logs:

@@ -1,0 +1,31 @@
+[Unit]
+Description=Customer Insight Dashboard (Node.js)
+Documentation=file:///opt/customer-insight-dashboard/README.md
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=www-data
+Group=www-data
+WorkingDirectory=/opt/customer-insight-dashboard
+Environment=NODE_ENV=production
+Environment=PORT=3000
+Environment=STORAGE_DRIVER=local
+Environment=TZ=Asia/Shanghai
+# 若需要自定义初始管理员密码，取消下一行注释并设置强密码（仅首次初始化生效）：
+# Environment=ADMIN_INITIAL_PASSWORD=请设置一个至少8位的强密码
+# 若站在 HTTPS 反代之后，取消下一行注释：
+# Environment=COOKIE_SECURE=1
+ExecStart=/usr/bin/node server.js
+Restart=always
+RestartSec=3
+# 安全加固：限制进程权限
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ProtectHome=true
+ReadWritePaths=/opt/customer-insight-dashboard
+
+[Install]
+WantedBy=multi-user.target

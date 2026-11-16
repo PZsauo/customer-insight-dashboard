@@ -1,0 +1,4 @@
+{
+  "driver": "local",
+  "_comment": "存储驱动：local=服务器本地 JSON 文件（默认，零依赖，任意服务器开箱即用）；cloud=WorkBuddy 云数据库（需先在 data/cloud-config.json 填入平台 publicConfig）。也可用环境变量 STORAGE_DRIVER=local|cloud 覆盖本文件。"
+}

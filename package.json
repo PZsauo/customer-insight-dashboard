@@ -1,0 +1,15 @@
+{
+  "name": "customer-insight-dashboard",
+  "version": "1.1.0",
+  "private": true,
+  "description": "客户数据信息统计驾驶舱 - 可移植一键部署包（Node.js 零运行时依赖 + 原生前端，存储可插拔）",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node server.js",
+    "seed": "node scripts/generate-demo-data.js",
+    "pack": "bash scripts/package.sh"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

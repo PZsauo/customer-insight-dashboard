@@ -1,0 +1,7 @@
+{
+  "_comment": "仅当 data/storage.json 的 driver=cloud 时才需要本文件。从 WorkBuddy 云服务面板获取 publicConfig 后，把本文件复制为 data/cloud-config.json 并填入下面四个字段；不要把真实 cloud-config.json 提交到公开代码库。",
+  "resourceId": "wbcs_在此填入你的资源ID",
+  "endpoint": "https://你的应用域名.app.workbuddy.host",
+  "oauthRelayBaseUrl": "https://www.workbuddy.cn/v2/as/genie-baas/oauth",
+  "publishableKey": "wbpk_在此填入你的发布密钥"
+}
