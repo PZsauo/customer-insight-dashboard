@@ -202,3 +202,10 @@ server {
 ## 9. 技术栈
 
 Node.js 18+（仅内置模块，无运行时 npm 依赖）· 原生 HTML/CSS/JS · SVG 自绘图表 · HMAC 签名会话 · scrypt 密码哈希 · 字段元数据驱动 · 可选 WorkBuddy 云数据库。
+## 10.演示
+<img width="507" height="565" alt="image" src="https://github.com/user-attachments/assets/a5ca9ddc-2d1c-45e5-bf2d-75f4c2a65f8c" />
+<img width="1518" height="716" alt="ScreenShot_2026-11-16_105210_051" src="https://github.com/user-attachments/assets/82805d9f-30d6-4a2f-848b-956cf7c1c69b" />
+<img width="1508" height="747" alt="ScreenShot_2026-11-16_105235_307" src="https://github.com/user-attachments/assets/18fcbcdb-1404-4234-9ace-fa165f0241cb" />
+<img width="1650" height="714" alt="ScreenShot_2026-11-16_105258_115" src="https://github.com/user-attachments/assets/5687bc20-d1a5-4d95-83d7-09ffdb8bd59a" />
+
+
